@@ -1,751 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>மகிழ்ச்சி Decor Studio | Premium Event Decorators & Planners</title>
-<meta name="description" content="மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning.">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    background: #FAF8F5;
-    color: #333333;
-    scroll-behavior: smooth;
-}
-
-/* Navbar Container */
-.navbar {
-    background: #4A0E17;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
-    border-bottom: 2px solid #D4AF37;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #D4AF37;
-}
-
-.nav-phone {
-    background: #D4AF37;
-    color: #4A0E17;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 15px;
-}
-
-/* Hero Section */
-header {
-    background: linear-gradient(to right, rgba(74, 14, 23, 0.95) 40%, rgba(74, 14, 23, 0.4)), url('1000159852.png') no-repeat center center/cover;
-    color: white;
-    padding: 60px 40px;
-    display: flex;
-    align-items: center;
-    min-height: 450px;
-    position: relative;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.logo-frame {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    border: 3px solid #D4AF37;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    flex-shrink: 0;
-}
-
-.logo-frame img {
-    width: 160px;
-    height: auto;
-    display: block;
-}
-
-.hero-text {
-    max-width: 600px;
-}
-
-.hero-text h1 {
-    font-size: 46px;
-    color: #D4AF37;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-}
-
-.hero-text h2 {
-    font-size: 38px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.hero-text .tagline {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.hero-text .description {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #f0f0f0;
-    margin-bottom: 25px;
-}
-
-/* Main Buttons */
-.btn-main {
-    background: linear-gradient(135deg, #E6C667, #C29B38);
-    color: #4A0E17;
-    border: none;
-    padding: 14px 35px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-}
-
-/* Section Controls */
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    color: #4A0E17;
-    margin-bottom: 40px;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.section-title::before, .section-title::after {
-    content: '♦ ♦ ♦';
-    color: #D4AF37;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-/* Services Layout */
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: white;
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    border: 1px solid #EFEFEF;
-    position: relative;
-}
-
-.card-icon {
-    width: 50px;
-    height: 50px;
-    background: #4A0E17;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px auto;
-    color: #D4AF37;
-    font-size: 22px;
-}
-
-.card h3 {
-    color: #4A0E17;
-    font-size: 19px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #555555;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.card .price {
-    color: #4A0E17;
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-/* Animated Card Button */
-.btn-quote {
-    background: #ffffff;
-    color: #4A0E17;
-    border: 1.5px solid #D4AF37;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 25px;
-    width: 100%;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-    animation: gold-glow 2s infinite;
-}
-
-@keyframes gold-glow {
-    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); border-color: #D4AF37; }
-    50% { box-shadow: 0 0 10px 3px rgba(212, 175, 55, 0.6); border-color: #E6C667; }
-    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); border-color: #D4AF37; }
-}
-
-.btn-quote:hover {
-    background: #4A0E17;
-    color: white;
-    border-color: #4A0E17;
-    animation: none;
-}
-
-/* Dual Column Split Layout */
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.payment-box {
-    background: #4A0E17;
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.payment-details {
-    flex-grow: 1;
-}
-
-.upi-tag {
-    background: linear-gradient(135deg, #E6C667, #C29B38);
-    color: #4A0E17;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    margin: 15px 0;
-    letter-spacing: 0.5px;
-}
-
-.qr-container {
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    text-align: center;
-    width: 180px;
-    flex-shrink: 0;
-}
-
-.qr-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.qr-container p {
-    color: #333333;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.hours-box {
-    background: #F4EFE6;
-    border: 2px dashed #C29B38;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.clock-icon {
-    font-size: 45px;
-    color: #4A0E17;
-    margin-bottom: 15px;
-}
-
-.hours-box h3 {
-    color: #2E7D32;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.hours-box p {
-    color: #555555;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Footer & Contact Strip */
-.contact-strip {
-    background: linear-gradient(to right, rgba(74, 14, 23, 0.95), rgba(74, 14, 23, 0.85)), url('1000159852.png') no-repeat center center/cover;
-    color: white;
-    padding: 40px;
-    border-radius: 12px;
-    margin-top: 40px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.contact-info-block {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 16px;
-}
-
-.contact-item a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-item svg {
-    fill: #D4AF37;
-    flex-shrink: 0;
-}
-
-.address-item {
-    align-items: flex-start;
-}
-
-/* Base Footer */
-footer {
-    background: #F4EFE6;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #E0D8C8;
-    font-size: 14px;
-    color: #555555;
-    font-weight: 500;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: #4A0E17;
-    text-decoration: none;
-}
-
-/* Fixed Modern Floating WhatsApp Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: white;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.2s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.08);
-}
-
-.whatsapp-float svg {
-    width: 36px;
-    height: 36px;
-    fill: currentColor;
-}
-
-/* Fixed standard CSS Media Queries for Mobile Responsive Viewports */
-@media (max-width: 768px) {
-    .navbar {
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 15px 20px;
-    }
-    .nav-links {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-    header {
-        padding: 40px 20px;
-    }
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
-    .hero-text h2 {
-        text-align: center;
-    }
-    .logo-frame {
-        margin: 0 auto;
-    }
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-    .payment-box {
-        flex-direction: column;
-        text-align: center;
-    }
-    .contact-container {
-        flex-direction: column;
-        gap: 25px;
-    }
-    .address-item {
-        justify-content: center;
-    }
-    footer {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>மகிழ்ச்சி Decor Studio - Professional Interior Design & Decoration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .tamil-text {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b6b;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .contact-btn {
+            background: #ff6b6b;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .contact-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 140px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -250px;
+            right: -250px;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .hero .tamil-highlight {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            color: #ffd700;
+            font-size: 64px;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+        
+        .btn-primary:hover {
+            background: #ff5252;
+            border-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #333;
+            font-weight: 800;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 120px 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 45px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(102,126,234,0.25);
+            border-color: #667eea;
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gallery .section-title {
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #ddd, #eee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #bbb;
+        }
+        
+        .gallery-item-title {
+            padding: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            color: #667eea;
+            margin-bottom: 40px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .info-item {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-icon {
+            font-size: 28px;
+            color: #667eea;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .info-content strong {
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .info-content p {
+            color: #666;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .info-content a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .info-content a:hover {
+            color: #ff6b6b;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: #ff6b6b;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.3);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s;
+            resize: none;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h4 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            border-top: 2px solid #444;
+            padding-top: 30px;
+            text-align: center;
+            color: #777;
+        }
+        
+        .footer-bottom p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: #667eea;
+                padding: 20px;
+                gap: 10px;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav a {
+                font-size: 18px;
+            }
+            
+            .logo {
+                font-size: 22px;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero .tamil-highlight {
+                font-size: 42px;
+            }
+            
+            .hero .subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- Top Navigation Bar -->
-<nav class="navbar">
-    <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Services</a></li>
-        <li><a href="#">Payment</a></li>
-        <li><a href="#">Contact Us</a></li>
-    </ul>
-    <a href="tel:+918248859680" class="nav-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        8248859680
-    </a>
-</nav>
-
-<!-- Hero Header Section -->
-<header>
-    <div class="hero-container">
-        <div class="logo-frame">
-            <img src="logo.jpg" alt="மகிழ்ச்சி Decor Studio Logo">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon">✨</div>
+                    <span><span class="tamil-text">மகிழ்ச்சி</span> Decor</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span>☰</span>
+                </button>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact" class="contact-btn">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="hero-text">
-            <h1>மகிழ்ச்சி</h1>
-            <h2>Decor Studio</h2>
-            <p class="tagline">We Plan • We Create • You Celebrate</p>
-            <p class="description">We create beautiful and memorable events with elegant decorations and professional planning. Let us make your special moments unforgettable.</p>
-            <a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20want%20to%20book%20an%20event." class="btn-main">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
-                Book Now
-            </a>
-        </div>
-    </div>
-</header>
+    </header>
 
-<!-- Services Section Grid Layout -->
-<section>
-    <div class="section-title">Our Services</div>
-    <div class="services">
-        <div class="card">
-            <div>
-                <div class="card-icon">💍</div>
-                <h3>Wedding & Engagement</h3>
-                <p>Elegant decorations and stylish wedding setups.</p>
-            </div>
-            <div>
-                <p class="price">Starting ₹4,999</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Wedding%20and%20Engagement%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🎂</div>
-                <h3>Birthday Party</h3>
-                <p>Beautiful birthday decorations for all ages.</p>
-            </div>
-            <div>
-                <p class="price">Starting ₹2,999</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Birthday%20Party%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">❤️</div>
-                <h3>Anniversary</h3>
-                <p>Romantic anniversary decorations.</p>
-            </div>
-            <div>
-                <p class="price">Starting ₹2,499</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Anniversary%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">👶</div>
-                <h3>Baby Shower</h3>
-                <p>Creative baby shower themes and decorations.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Baby%20Shower%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🎨</div>
-                <h3>Decoration & Styling</h3>
-                <p>Creative event decoration and stage setup.</p>
-            </div>
-            <div>
-                <p class="price">Starting ₹4,999</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Stage%20Decoration%20and%20Styling." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🏢</div>
-                <h3>Corporate Events</h3>
-                <p>Professional event planning for companies.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Corporate%20Event%20planning." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🎭</div>
-                <h3>Theme Parties</h3>
-                <p>Customized theme-based event decoration.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Theme%20Party%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🛕</div>
-                <h3>Religious Events</h3>
-                <p>Traditional decoration for religious functions.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Religious%20Event%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">👧</div>
-                <h3>Children's Parties</h3>
-                <p>Fun decorations for kids.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Children's%20Party%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🍽</div>
-                <h3>Catering</h3>
-                <p>Food arrangements for all occasions.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Catering%20arrangements." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🎓</div>
-                <h3>School Events</h3>
-                <p>Decoration and event management.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20School%20Event%20management." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="card-icon">🎉</div>
-                <h3>Retirement Party</h3>
-                <p>Special decorations for retirement celebrations.</p>
-            </div>
-            <div>
-                <p class="price">Contact for pricing</p>
-                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Retirement%20Party%20decorations." class="btn-quote">Get a Quote</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Columns Split Modules Section -->
-<section style="padding-top: 0;">
-    <div class="info-grid">
-        <!-- Module Payment Box Left -->
-        <div class="payment-box">
-            <div class="payment-details">
-                <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #D4AF37;">♦ Payment Options ♦</div>
-                <h3 style="font-size: 22px; margin-top: 5px;">We Accept UPI Payments</h3>
-                <div class="upi-tag">8248859680tv5@ibl</div>
-                <p style="font-size: 13px; opacity: 0.8;">Scan & Pay using any UPI App (PhonePe, Google Pay, Paytm)</p>
-            </div>
-            <div class="qr-container">
-                <img src="1000159842.jpg" alt="UPI QR Code Grid Display">
-                <p>ANANDHARAJ T</p>
-            </div>
-        </div>
-
-        <!-- Module Business Hours Right -->
-        <div class="hours-box">
-            <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #C29B38; margin-bottom: 5px;">♦ Business Hours ♦</div>
-            <div class="clock-icon">🕒</div>
-            <h3>OPEN 24 HOURS</h3>
-            <p>(Monday - Sunday)</p>
-        </div>
-    </div>
-
-    <!-- Contact Details Horizontal Banner Block -->
-    <div class="contact-strip">
-        <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #D4AF37; text-align: center; margin-bottom: 25px;">♦ Contact Us ♦</div>
-        <div class="contact-container">
-            <div class="contact-info-block">
-                <div class="contact-item">
-                    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <a href="tel:+918248859680"><strong>8248859680</strong></a>
-                </div>
-                <div class="contact-item">
-                    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    <a href="mailto:magizhchidecorstudio@gmail.com">magizhchidecorstudio@gmail.com</a>
-                </div>
-            </div>
-            <div class="contact-info-block">
-                <div class="contact-item address-item">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>
-                        No:3, East Pondy Main Road,<br>
-                        Valavanur, Villupuram,<br>
-                        Tamil Nadu - 605108
-                    </span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    Welcome to <span class="tamil-highlight">மகிழ்ச்சி</span> Decor Studio
+                </h1>
+                <p class="subtitle">Transform Your Spaces Into Dreams</p>
+                <p>Professional Interior Design & Decoration Services for Residential & Commercial Spaces</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer Section -->
-<footer>
-    <div>© 2026 மகிழ்ச்சி Decor Studio. All Rights Reserved.</div>
-    <div style="font-weight: bold; color: #4A0E17;">We Plan • We Create • You Celebrate</div>
-    <div class="social-icons">
-        <a href="#">🌐</a>
-        <a href="#">📸</a>
-        <a href="#">💼</a>
-    </div>
-</footer>
-
-<!-- Floating Larger Bottom Right WhatsApp Trigger -->
-<a class="whatsapp-float" href="https://wa.me/918248859680" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
-</a>
-
-</body>
-</html>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>
+                    Welcome to <strong>மகிழ்ச்சி Decor Studio</strong>, your trusted partner in creating beautiful, 
+      
