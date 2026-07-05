@@ -113,7 +113,6 @@ header {
     margin-bottom: 15px;
     text-align: left;
 }
-.hero-text h2::after { display: none; }
 
 .hero-text .tagline {
     font-size: 18px;
@@ -443,18 +442,51 @@ footer {
     fill: currentColor;
 }
 
-/* Responsive Overrides */
-@tablet-block {
-    .hero-container, .contact-container, .info-grid {
+/* Fixed standard CSS Media Queries for Mobile Responsive Viewports */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    header {
+        padding: 40px 20px;
+    }
+    .hero-container {
         flex-direction: column;
-        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 25px;
+    }
+    .hero-text h2 {
         text-align: center;
     }
-    .navbar { justify-content: center; flex-wrap: wrap; }
-    .logo-frame { margin: 0 auto; }
-    .payment-box { flex-direction: column; }
-    .address-item { justify-content: center; }
-    footer { flex-direction: column; gap: 15px; }
+    .logo-frame {
+        margin: 0 auto;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .payment-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .address-item {
+        justify-content: center;
+    }
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
 </style>
 </head>
