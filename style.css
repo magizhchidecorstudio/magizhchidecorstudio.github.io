@@ -1,239 +1,479 @@
-/* ==========================================
+/* =========================================
    மகிழ்ச்சி Decor Studio
-   script.js
-========================================== */
+   Premium Style.css - Part 1
+========================================= */
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-        const target = document.querySelector(this.getAttribute("href"));
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
-});
+body{
 
-// Animated Counter
+font-family:'Poppins',sans-serif;
 
-const counters = document.querySelectorAll(".counter h3");
+background:#f8f5ef;
 
-const speed = 200;
+color:#222;
 
-counters.forEach(counter => {
-
-    const animate = () => {
-
-        const value = counter.innerText;
-
-        const number = parseInt(value.replace(/\D/g, ""));
-
-        const suffix = value.replace(/[0-9]/g, "");
-
-        const current = +counter.getAttribute("data-count") || 0;
-
-        const increment = Math.ceil(number / speed);
-
-        if (current < number) {
-
-            const next = Math.min(current + increment, number);
-
-            counter.setAttribute("data-count", next);
-
-            counter.innerText = next + suffix;
-
-            requestAnimationFrame(animate);
-
-        } else {
-
-            counter.innerText = number + suffix;
-
-        }
-
-    };
-
-    animate();
-
-});
-
-// Fade Animation
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-}, {
-
-    threshold: 0.2
-
-});
-
-document.querySelectorAll(
-
-'.service-card,.gallery-item,.counter,.review-card,.contact-box'
-
-).forEach(el => {
-
-    el.classList.add("hidden");
-
-    observer.observe(el);
-
-});
-
-// Scroll To Top
-
-const topButton = document.createElement("div");
-
-topButton.className = "scroll-top";
-
-topButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
-
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-
-        topButton.classList.add("active");
-
-    } else {
-
-        topButton.classList.remove("active");
-
-    }
-
-});
-
-topButton.onclick = () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-};
-
-// Ripple Effect
-
-document.querySelectorAll("button").forEach(btn => {
-
-    btn.addEventListener("click", function (e) {
-
-        const circle = document.createElement("span");
-
-        circle.className = "ripple";
-
-        const rect = this.getBoundingClientRect();
-
-        circle.style.left = e.clientX - rect.left + "px";
-
-        circle.style.top = e.clientY - rect.top + "px";
-
-        this.appendChild(circle);
-
-        setTimeout(() => {
-
-            circle.remove();
-
-        }, 600);
-
-    });
-
-});
-
-// Copy UPI
-
-const upi = document.querySelector(".upi");
-
-if (upi) {
-
-    upi.style.cursor = "pointer";
-
-    upi.title = "Click to Copy";
-
-    upi.onclick = () => {
-
-        navigator.clipboard.writeText(
-
-            "8248859680tv5@ibl"
-
-        );
-
-        alert("UPI ID Copied!");
-
-    };
+overflow-x:hidden;
 
 }
 
-// Floating WhatsApp Pulse
+img{
 
-const whatsapp = document.querySelector(".floating-whatsapp");
+max-width:100%;
 
-setInterval(() => {
+display:block;
 
-    if (whatsapp) {
+}
 
-        whatsapp.style.transform = "scale(1.15)";
+/* ================= NAVBAR ================= */
 
-        setTimeout(() => {
+header{
 
-            whatsapp.style.transform = "scale(1)";
+position:fixed;
 
-        }, 400);
+top:0;
 
-    }
+width:100%;
 
-}, 4000);
+z-index:999;
 
-// Gallery Image Click
+background:rgba(139,0,0,.95);
 
-document.querySelectorAll(".gallery-item img").forEach(img => {
+backdrop-filter:blur(15px);
 
-    img.addEventListener("click", () => {
+box-shadow:0 5px 20px rgba(0,0,0,.25);
 
-        const popup = document.createElement("div");
+}
 
-        popup.className = "lightbox";
+.navbar{
 
-        popup.innerHTML = `
+width:90%;
 
-        <div class="lightbox-content">
+margin:auto;
 
-        <img src="${img.src}">
+display:flex;
 
-        </div>
+align-items:center;
 
-        `;
+justify-content:space-between;
 
-        document.body.appendChild(popup);
+padding:15px 0;
 
-        popup.onclick = () => popup.remove();
+}
 
-    });
+.logo{
 
-});
+display:flex;
 
-// Loading Animation
+align-items:center;
 
-window.addEventListener("load", () => {
+gap:15px;
 
-    document.body.classList.add("loaded");
+}
 
-});
+.logo img{
 
-console.log("மகிழ்ச்சி Decor Studio Loaded Successfully");
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:white;
+
+padding:5px;
+
+box-shadow:0 0 15px rgba(255,215,0,.5);
+
+}
+
+.logo h2{
+
+color:#FFD700;
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+.logo p{
+
+color:white;
+
+font-size:15px;
+
+margin-top:-5px;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#FFD700;
+
+}
+
+.book-btn{
+
+background:#FFD700;
+
+color:#8B0000;
+
+padding:12px 28px;
+
+border-radius:30px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.4s;
+
+animation:pulse 2s infinite;
+
+}
+
+.book-btn:hover{
+
+transform:translateY(-4px);
+
+background:white;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+height:100vh;
+
+background:
+
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+
+url("hero.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display
+
+ /* =========================================
+   SERVICES
+========================================= */
+
+.services-section{
+
+background:#fff;
+
+}
+
+.service-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+}
+
+.service-card{
+
+background:#ffffff;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.service-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:6px;
+
+background:linear-gradient(90deg,#FFD700,#8B0000);
+
+transition:.5s;
+
+}
+
+.service-card:hover::before{
+
+left:0;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.service-icon{
+
+font-size:60px;
+
+color:#8B0000;
+
+margin-bottom:20px;
+
+transition:.5s;
+
+}
+
+.service-card:hover .service-icon{
+
+transform:rotate(15deg) scale(1.2);
+
+color:#FFD700;
+
+}
+
+.service-card h3{
+
+font-size:26px;
+
+color:#8B0000;
+
+margin-bottom:15px;
+
+}
+
+.service-card p{
+
+color:#666
+
+/* =========================================
+   TESTIMONIALS
+========================================= */
+
+#reviews{
+background:#fff;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.review-card{
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+transition:.4s;
+border-top:5px solid #FFD700;
+}
+
+.review-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.review-card p{
+margin:20px 0;
+line-height:1.8;
+color:#555;
+}
+
+.review-card h4{
+color:#8B0000;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+#contact{
+background:#faf7f2;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-bottom:50px;
+}
+
+.contact-box{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.contact-box:hover{
+transform:translateY(-10px);
+background:#8B0000;
+color:white;
+}
+
+.contact-box i{
+font-size:45px;
+margin-bottom:20px;
+color:#D4AF37;
+}
+
+.contact-box h3{
+margin-bottom:15px;
+}
+
+.contact-box a{
+color:inherit;
+text-decoration:none;
+font-weight:600;
+}
+
+.contact-box p{
+line-height:1.8;
+}
+
+/* =========================================
+   GOOGLE MAP
+========================================= */
+
+.map-box{
+margin-top:40px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.map-box iframe{
+width:100%;
+height:420px;
+border:none;
+}
+
+/* =========================================
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.scroll-top{
+position:fixed;
+bottom:110px;
+right:30px;
+width:55px;
+height:55px;
+background:#8B0000;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:9998;
+}
+
+.scroll-top.active{
+opacity:1;
+visibility:visible;
+}
+
+.ripple{
+position:absolute;
+width:15px;
+height:15px;
+background:rgba(255,255,255,.5);
+border-radius:50%;
+transform:scale(0);
+animation:ripple .6s linear;
+pointer-events:none;
+}
+
+@keyframes ripple{
+to{
+transform:scale(15);
+opacity:0;
+}
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.85);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:12px;
+}
+
+button{
+position:relative;
+overflow:hidden;
+}
