@@ -4,13 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>மகிழ்ச்சி Decor Studio | Premium Event Decorators & Planners</title>
-<meta name="description" content="மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning in India. Specializing in weddings, birthdays, baby showers, and corporate events.">
-<meta name="keywords" content="decor studio, event planners, wedding decoration, birthday party decor, baby shower, corporate events, traditional decoration">
-
-<!-- Open Graph / Link Preview Tags -->
-<meta property="og:title" content="மகிழ்ச்சி Decor Studio">
-<meta property="og:description" content="We Plan • We Create • You Celebrate. Professional event decoration services.">
-<meta property="og:image" content="logo.jpg">
+<meta name="description" content="மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning.">
 
 <style>
 *{
@@ -21,13 +15,13 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#fdfbf7;
-color:#333;
+background:#f7f4ed; /* Darkened background slightly for better contrast */
+color:#222222; /* Darker text color for easier reading */
 scroll-behavior: smooth;
 }
 
 header{
-background:linear-gradient(135deg,#6B1D2F,#B89756);
+background:linear-gradient(135deg,#540e1c,#9c7b3b); /* Richer, deeper luxury tones */
 color:white;
 text-align:center;
 padding:50px 20px;
@@ -39,19 +33,21 @@ max-width:90%;
 border-radius:10px;
 background:white;
 padding:8px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 header h1{
 margin-top:20px;
 font-size:38px;
 letter-spacing: 1px;
+text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 header p{
 margin-top:10px;
 font-size:18px;
-opacity: 0.9;
+opacity: 0.95;
+font-weight: bold;
 }
 
 section{
@@ -62,19 +58,17 @@ margin:auto;
 
 h2{
 text-align:center;
-color:#6B1D2F;
+color:#540e1c;
 margin-bottom:30px;
 font-size: 28px;
-position: relative;
 }
 
-/* Subtle accent line under titles */
 h2::after {
 content: '';
 display: block;
-width: 50px;
+width: 60px;
 height: 3px;
-background: #B89756;
+background: #9c7b3b;
 margin: 10px auto 0;
 border-radius: 2px;
 }
@@ -85,38 +79,36 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
-/* Flex layout forces cards to be uniform in height */
 .card{
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.06);
-border-top: 4px solid #B89756;
-transition: transform 0.3s, box-shadow 0.3s;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+border-top: 4px solid #9c7b3b;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+transition: transform 0.3s;
 }
 
 .card:hover {
 transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0,0,0,.12);
 }
 
 .card-content h3{
-color:#6B1D2F;
+color:#540e1c;
 margin-bottom:12px;
 font-size: 20px;
 }
 
 .card-content p {
-color: #666;
+color: #333333; /* Darkened description text inside cards */
 font-size: 15px;
 line-height: 1.5;
 }
 
 .price{
-color:#B89756;
+color:#9c7b3b;
 font-weight:bold;
 font-size:18px;
 margin: 15px 0 5px 0;
@@ -125,36 +117,60 @@ margin: 15px 0 5px 0;
 .card .btn-quote {
 margin-top: 15px;
 background: transparent;
-color: #6B1D2F;
-border: 1px solid #6B1D2F;
+color: #540e1c;
+border: 2px solid #540e1c;
 padding: 8px 15px;
 font-size: 14px;
 width: 100%;
 justify-content: center;
 box-shadow: none;
 border-radius: 6px;
+font-weight: bold;
 }
 
 .card .btn-quote:hover {
-background: #6B1D2F;
+background: #540e1c;
 color: white;
 }
 
+.payment-box {
+background: white;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 6px 18px rgba(0,0,0,.08);
+text-align: center;
+max-width: 500px;
+margin: 0 auto;
+border: 2px dashed #9c7b3b;
+}
+
+.upi-id {
+background: #f4efe3;
+padding: 10px 15px;
+border-radius: 8px;
+font-size: 18px;
+font-weight: bold;
+color: #540e1c;
+display: inline-block;
+margin-top: 10px;
+letter-spacing: 0.5px;
+}
+
 .contact{
-background:#6B1D2F;
+background:#540e1c;
 color:white;
 text-align:center;
 padding:50px 20px;
 border-radius: 20px;
 margin-bottom: 40px;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
 .contact h2 {
 color: white;
 }
+
 .contact h2::after {
-background: #B89756;
+background: #9c7b3b;
 }
 
 .contact-method {
@@ -163,21 +179,25 @@ align-items: center;
 justify-content: center;
 gap: 12px;
 margin: 20px 0;
-font-size: 20px;
+font-size: 18px;
+line-height: 1.6;
+}
+
+.address-block {
+align-items: flex-start;
+max-width: 400px;
+margin: 20px auto;
+text-align: left;
 }
 
 .contact a{
 color:white;
 text-decoration:none;
-transition: opacity 0.2s;
-}
-
-.contact a:hover {
-opacity: 0.8;
+font-weight: bold;
 }
 
 footer{
-background:#1a1a1a;
+background:#111111;
 color:white;
 text-align:center;
 padding:30px 20px;
@@ -197,12 +217,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
-transition: transform 0.2s;
 z-index: 1000;
-}
-
-.whatsapp-float:hover {
-transform: scale(1.1);
 }
 
 .whatsapp-float svg {
@@ -212,7 +227,7 @@ fill: currentColor;
 }
 
 button{
-background:#B89756;
+background:#9c7b3b;
 border:none;
 padding:12px 30px;
 border-radius:30px;
@@ -224,12 +239,11 @@ margin-top:20px;
 display: inline-flex;
 align-items: center;
 gap: 10px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-transition: background 0.2s, color 0.2s;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 button:hover{
-background:#9C7F44;
+background:#82652e;
 }
 
 button svg {
@@ -238,42 +252,32 @@ height: 20px;
 fill: currentColor;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <img src="logo.jpg" alt="மகிழ்ச்சி Decor Studio">
-
 <h1>மகிழ்ச்சி Decor Studio</h1>
-
 <p>We Plan • We Create • You Celebrate</p>
-
-<a href="https://wa.me/918248859680?text=Hi%20%மகிழ்ச்சி%20Decor%20Studio!%20I%20want%20to%20book%20an%20event.">
+<!-- Fixed standard text encoding bug to prevent broken characters -->
+<a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20want%20to%20book%20an%20event.">
 <button>
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
   Book Now
 </button>
 </a>
-
 </header>
 
 <section>
-
 <h2>About Us</h2>
-
-<p style="text-align:center;font-size:18px;line-height:32px;color:#555;">
+<p style="text-align:center;font-size:18px;line-height:32px;color:#222222;font-weight:500;">
 மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning. We specialize in weddings, birthdays, baby showers, anniversaries, religious events, corporate events, and much more.
 </p>
-
 </section>
 
 <section>
-
 <h2>Our Services</h2>
-
 <div class="services">
 
 <div class="card">
@@ -385,21 +389,26 @@ fill: currentColor;
 </div>
 
 </div>
+</section>
 
+<!-- Added Payment Options Section -->
+<section>
+  <h2>Payment Options</h2>
+  <div class="payment-box">
+    <p style="font-size: 18px; font-weight: bold; color: #333;">We Accept UPI Payments</p>
+    <div class="upi-id">8248859680tv5@ibl</div>
+    <p style="font-size: 14px; color: #555; margin-top: 10px;">Scan & Pay using any UPI App (PhonePe, Google Pay, Paytm)</p>
+  </div>
 </section>
 
 <section>
-
 <h2>Business Hours</h2>
-
-<p style="text-align:center;font-size:22px;color:#2e7d32;font-weight:bold;">
+<p style="text-align:center;font-size:22px;color:#1e5e22;font-weight:bold;">
 🕒 Open 24 Hours (Monday - Sunday)
 </p>
-
 </section>
 
 <section class="contact">
-
 <h2>Contact Us</h2>
 
 <div class="contact-method">
@@ -412,23 +421,30 @@ fill: currentColor;
   <a href="mailto:magizhchidecorstudio@gmail.com">magizhchidecorstudio@gmail.com</a>
 </div>
 
+<!-- Added Studio Address -->
+<div class="contact-method address-block">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+  <span>
+    <strong>Address:</strong><br>
+    No:3, East Pondy Main Road,<br>
+    Valavanur, Villupuram,<br>
+    Tamil Nadu - 605108
+  </span>
+</div>
+
 <br>
 
-<a href="https://wa.me/918248859680?text=Hi%20மகிழ்ச்சி%20Decor%20Studio!%20I%20have%20an%20inquiry.">
+<a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20have%20an%20inquiry.">
 <button>
   <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
   Chat on WhatsApp
 </button>
 </a>
-
 </section>
 
 <footer>
-
 <p>© 2026 மகிழ்ச்சி Decor Studio</p>
-
 <p>We Plan • We Create • You Celebrate</p>
-
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/918248859680" aria-label="Chat on WhatsApp">
