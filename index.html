@@ -5,450 +5,714 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>மகிழ்ச்சி Decor Studio | Premium Event Decorators & Planners</title>
 <meta name="description" content="மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning.">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-background:#f7f4ed; /* Darkened background slightly for better contrast */
-color:#222222; /* Darker text color for easier reading */
-scroll-behavior: smooth;
+body {
+    background: #FAF8F5;
+    color: #333333;
+    scroll-behavior: smooth;
 }
 
-header{
-background:linear-gradient(135deg,#540e1c,#9c7b3b); /* Richer, deeper luxury tones */
-color:white;
-text-align:center;
-padding:50px 20px;
+/* Navbar Container */
+.navbar {
+    background: #4A0E17;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 2px solid #D4AF37;
 }
 
-header img{
-width:220px;
-max-width:90%;
-border-radius:10px;
-background:white;
-padding:8px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
-header h1{
-margin-top:20px;
-font-size:38px;
-letter-spacing: 1px;
-text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-header p{
-margin-top:10px;
-font-size:18px;
-opacity: 0.95;
-font-weight: bold;
+.nav-links a:hover, .nav-links a.active {
+    color: #D4AF37;
 }
 
-section{
-padding:50px 20px;
-max-width:1100px;
-margin:auto;
+.nav-phone {
+    background: #D4AF37;
+    color: #4A0E17;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
 }
 
-h2{
-text-align:center;
-color:#540e1c;
-margin-bottom:30px;
-font-size: 28px;
+/* Hero Section */
+header {
+    background: linear-gradient(to right, rgba(74, 14, 23, 0.95) 40%, rgba(74, 14, 23, 0.4)), url('1000159852.png') no-repeat center center/cover;
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    min-height: 450px;
+    position: relative;
 }
 
-h2::after {
-content: '';
-display: block;
-width: 60px;
-height: 3px;
-background: #9c7b3b;
-margin: 10px auto 0;
-border-radius: 2px;
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.logo-frame {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 3px solid #D4AF37;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    flex-shrink: 0;
 }
 
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-border-top: 4px solid #9c7b3b;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-transition: transform 0.3s;
+.logo-frame img {
+    width: 160px;
+    height: auto;
+    display: block;
 }
 
-.card:hover {
-transform: translateY(-5px);
+.hero-text {
+    max-width: 600px;
 }
 
-.card-content h3{
-color:#540e1c;
-margin-bottom:12px;
-font-size: 20px;
+.hero-text h1 {
+    font-size: 46px;
+    color: #D4AF37;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
-.card-content p {
-color: #333333; /* Darkened description text inside cards */
-font-size: 15px;
-line-height: 1.5;
+.hero-text h2 {
+    font-size: 38px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.hero-text h2::after { display: none; }
+
+.hero-text .tagline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.price{
-color:#9c7b3b;
-font-weight:bold;
-font-size:18px;
-margin: 15px 0 5px 0;
+.hero-text .description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 25px;
 }
 
-.card .btn-quote {
-margin-top: 15px;
-background: transparent;
-color: #540e1c;
-border: 2px solid #540e1c;
-padding: 8px 15px;
-font-size: 14px;
-width: 100%;
-justify-content: center;
-box-shadow: none;
-border-radius: 6px;
-font-weight: bold;
+/* Main Buttons */
+.btn-main {
+    background: linear-gradient(135deg, #E6C667, #C29B38);
+    color: #4A0E17;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card .btn-quote:hover {
-background: #540e1c;
-color: white;
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+/* Section Controls */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #4A0E17;
+    margin-bottom: 40px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title::before, .section-title::after {
+    content: '♦ ♦ ♦';
+    color: #D4AF37;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Services Layout */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #EFEFEF;
+    position: relative;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background: #4A0E17;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    color: #D4AF37;
+    font-size: 22px;
+}
+
+.card h3 {
+    color: #4A0E17;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.card .price {
+    color: #4A0E17;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+/* Animated Card Button */
+.btn-quote {
+    background: #ffffff;
+    color: #4A0E17;
+    border: 1.5px solid #D4AF37;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    animation: gold-glow 2s infinite;
+}
+
+@keyframes gold-glow {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); border-color: #D4AF37; }
+    50% { box-shadow: 0 0 10px 3px rgba(212, 175, 55, 0.6); border-color: #E6C667; }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); border-color: #D4AF37; }
+}
+
+.btn-quote:hover {
+    background: #4A0E17;
+    color: white;
+    border-color: #4A0E17;
+    animation: none;
+}
+
+/* Dual Column Split Layout */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .payment-box {
-background: white;
-padding: 30px;
-border-radius: 15px;
-box-shadow: 0 6px 18px rgba(0,0,0,.08);
-text-align: center;
-max-width: 500px;
-margin: 0 auto;
-border: 2px dashed #9c7b3b;
+    background: #4A0E17;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.upi-id {
-background: #f4efe3;
-padding: 10px 15px;
-border-radius: 8px;
-font-size: 18px;
-font-weight: bold;
-color: #540e1c;
-display: inline-block;
-margin-top: 10px;
-letter-spacing: 0.5px;
+.payment-details {
+    flex-grow: 1;
 }
 
-.contact{
-background:#540e1c;
-color:white;
-text-align:center;
-padding:50px 20px;
-border-radius: 20px;
-margin-bottom: 40px;
+.upi-tag {
+    background: linear-gradient(135deg, #E6C667, #C29B38);
+    color: #4A0E17;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 15px 0;
+    letter-spacing: 0.5px;
 }
 
-.contact h2 {
-color: white;
+.qr-container {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    width: 180px;
+    flex-shrink: 0;
 }
 
-.contact h2::after {
-background: #9c7b3b;
+.qr-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
 }
 
-.contact-method {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
-margin: 20px 0;
-font-size: 18px;
-line-height: 1.6;
+.qr-container p {
+    color: #333333;
+    font-size: 11px;
+    font-weight: bold;
 }
 
-.address-block {
-align-items: flex-start;
-max-width: 400px;
-margin: 20px auto;
-text-align: left;
+.hours-box {
+    background: #F4EFE6;
+    border: 2px dashed #C29B38;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.contact a{
-color:white;
-text-decoration:none;
-font-weight: bold;
+.clock-icon {
+    font-size: 45px;
+    color: #4A0E17;
+    margin-bottom: 15px;
 }
 
-footer{
-background:#111111;
-color:white;
-text-align:center;
-padding:30px 20px;
-line-height: 1.6;
+.hours-box h3 {
+    color: #2E7D32;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-width: 60px;
-height: 60px;
-border-radius:50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index: 1000;
+.hours-box p {
+    color: #555555;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Footer & Contact Strip */
+.contact-strip {
+    background: linear-gradient(to right, rgba(74, 14, 23, 0.95), rgba(74, 14, 23, 0.85)), url('1000159852.png') no-repeat center center/cover;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-item svg {
+    fill: #D4AF37;
+    flex-shrink: 0;
+}
+
+.address-item {
+    align-items: flex-start;
+}
+
+/* Base Footer */
+footer {
+    background: #F4EFE6;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E0D8C8;
+    font-size: 14px;
+    color: #555555;
+    font-weight: 500;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #4A0E17;
+    text-decoration: none;
+}
+
+/* Fixed Modern Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
 }
 
 .whatsapp-float svg {
-width: 32px;
-height: 32px;
-fill: currentColor;
+    width: 36px;
+    height: 36px;
+    fill: currentColor;
 }
 
-button{
-background:#9c7b3b;
-border:none;
-padding:12px 30px;
-border-radius:30px;
-font-size:16px;
-font-weight: bold;
-cursor:pointer;
-color:white;
-margin-top:20px;
-display: inline-flex;
-align-items: center;
-gap: 10px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-button:hover{
-background:#82652e;
-}
-
-button svg {
-width: 20px;
-height: 20px;
-fill: currentColor;
+/* Responsive Overrides */
+@tablet-block {
+    .hero-container, .contact-container, .info-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .navbar { justify-content: center; flex-wrap: wrap; }
+    .logo-frame { margin: 0 auto; }
+    .payment-box { flex-direction: column; }
+    .address-item { justify-content: center; }
+    footer { flex-direction: column; gap: 15px; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Top Navigation Bar -->
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Payment</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <a href="tel:+918248859680" class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        8248859680
+    </a>
+</nav>
+
+<!-- Hero Header Section -->
 <header>
-<img src="logo.jpg" alt="மகிழ்ச்சி Decor Studio">
-<h1>மகிழ்ச்சி Decor Studio</h1>
-<p>We Plan • We Create • You Celebrate</p>
-<!-- Fixed standard text encoding bug to prevent broken characters -->
-<a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20want%20to%20book%20an%20event.">
-<button>
-  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
-  Book Now
-</button>
-</a>
+    <div class="hero-container">
+        <div class="logo-frame">
+            <img src="logo.jpg" alt="மகிழ்ச்சி Decor Studio Logo">
+        </div>
+        <div class="hero-text">
+            <h1>மகிழ்ச்சி</h1>
+            <h2>Decor Studio</h2>
+            <p class="tagline">We Plan • We Create • You Celebrate</p>
+            <p class="description">We create beautiful and memorable events with elegant decorations and professional planning. Let us make your special moments unforgettable.</p>
+            <a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20want%20to%20book%20an%20event." class="btn-main">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
+                Book Now
+            </a>
+        </div>
+    </div>
 </header>
 
+<!-- Services Section Grid Layout -->
 <section>
-<h2>About Us</h2>
-<p style="text-align:center;font-size:18px;line-height:32px;color:#222222;font-weight:500;">
-மகிழ்ச்சி Decor Studio creates beautiful and memorable events with elegant decorations and professional planning. We specialize in weddings, birthdays, baby showers, anniversaries, religious events, corporate events, and much more.
-</p>
+    <div class="section-title">Our Services</div>
+    <div class="services">
+        <div class="card">
+            <div>
+                <div class="card-icon">💍</div>
+                <h3>Wedding & Engagement</h3>
+                <p>Elegant decorations and stylish wedding setups.</p>
+            </div>
+            <div>
+                <p class="price">Starting ₹4,999</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Wedding%20and%20Engagement%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎂</div>
+                <h3>Birthday Party</h3>
+                <p>Beautiful birthday decorations for all ages.</p>
+            </div>
+            <div>
+                <p class="price">Starting ₹2,999</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Birthday%20Party%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">❤️</div>
+                <h3>Anniversary</h3>
+                <p>Romantic anniversary decorations.</p>
+            </div>
+            <div>
+                <p class="price">Starting ₹2,499</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Anniversary%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">👶</div>
+                <h3>Baby Shower</h3>
+                <p>Creative baby shower themes and decorations.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Baby%20Shower%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎨</div>
+                <h3>Decoration & Styling</h3>
+                <p>Creative event decoration and stage setup.</p>
+            </div>
+            <div>
+                <p class="price">Starting ₹4,999</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Stage%20Decoration%20and%20Styling." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🏢</div>
+                <h3>Corporate Events</h3>
+                <p>Professional event planning for companies.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Corporate%20Event%20planning." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎭</div>
+                <h3>Theme Parties</h3>
+                <p>Customized theme-based event decoration.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Theme%20Party%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🛕</div>
+                <h3>Religious Events</h3>
+                <p>Traditional decoration for religious functions.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Religious%20Event%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">👧</div>
+                <h3>Children's Parties</h3>
+                <p>Fun decorations for kids.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Children's%20Party%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🍽</div>
+                <h3>Catering</h3>
+                <p>Food arrangements for all occasions.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Catering%20arrangements." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎓</div>
+                <h3>School Events</h3>
+                <p>Decoration and event management.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20School%20Event%20management." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="card-icon">🎉</div>
+                <h3>Retirement Party</h3>
+                <p>Special decorations for retirement celebrations.</p>
+            </div>
+            <div>
+                <p class="price">Contact for pricing</p>
+                <a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Retirement%20Party%20decorations." class="btn-quote">Get a Quote</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>Our Services</h2>
-<div class="services">
+<!-- Columns Split Modules Section -->
+<section style="padding-top: 0;">
+    <div class="info-grid">
+        <!-- Module Payment Box Left -->
+        <div class="payment-box">
+            <div class="payment-details">
+                <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #D4AF37;">♦ Payment Options ♦</div>
+                <h3 style="font-size: 22px; margin-top: 5px;">We Accept UPI Payments</h3>
+                <div class="upi-tag">8248859680tv5@ibl</div>
+                <p style="font-size: 13px; opacity: 0.8;">Scan & Pay using any UPI App (PhonePe, Google Pay, Paytm)</p>
+            </div>
+            <div class="qr-container">
+                <img src="1000159842.jpg" alt="UPI QR Code Grid Display">
+                <p>ANANDHARAJ T</p>
+            </div>
+        </div>
 
-<div class="card">
-<div class="card-content">
-  <h3>💍 Wedding & Engagement</h3>
-  <p>Elegant decorations and stylish wedding setups.</p>
-  <p class="price">Starting ₹4,999</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Wedding%20and%20Engagement%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
+        <!-- Module Business Hours Right -->
+        <div class="hours-box">
+            <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #C29B38; margin-bottom: 5px;">♦ Business Hours ♦</div>
+            <div class="clock-icon">🕒</div>
+            <h3>OPEN 24 HOURS</h3>
+            <p>(Monday - Sunday)</p>
+        </div>
+    </div>
 
-<div class="card">
-<div class="card-content">
-  <h3>🎂 Birthday Party</h3>
-  <p>Beautiful birthday decorations for all ages.</p>
-  <p class="price">Starting ₹2,999</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Birthday%20Party%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>❤️ Anniversary</h3>
-  <p>Romantic anniversary decorations.</p>
-  <p class="price">Starting ₹2,499</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Anniversary%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>👶 Baby Shower</h3>
-  <p>Creative baby shower themes and decorations.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Baby%20Shower%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🎨 Decoration & Styling</h3>
-  <p>Creative event decoration and stage setup.</p>
-  <p class="price">Starting ₹4,999</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Stage%20Decoration%20and%20Styling."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🏢 Corporate Events</h3>
-  <p>Professional event planning for companies.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Corporate%20Event%20planning."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🎭 Theme Parties</h3>
-  <p>Customized theme-based event decoration.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Theme%20Party%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🛕 Religious Events</h3>
-  <p>Traditional decoration for religious functions.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Religious%20Event%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>👧 Children's Parties</h3>
-  <p>Fun decorations for kids.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Children's%20Party%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🍽 Catering</h3>
-  <p>Food arrangements for all occasions.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Catering%20arrangements."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🎓 School Events</h3>
-  <p>Decoration and event management.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20School%20Event%20management."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-<div class="card">
-<div class="card-content">
-  <h3>🎉 Retirement Party</h3>
-  <p>Special decorations for retirement celebrations.</p>
-  <p class="price">Contact for pricing</p>
-</div>
-<a href="https://wa.me/918248859680?text=Hi!%20I'm%20interested%20in%20Retirement%20Party%20decorations."><button class="btn-quote">Get a Quote</button></a>
-</div>
-
-</div>
+    <!-- Contact Details Horizontal Banner Block -->
+    <div class="contact-strip">
+        <div style="font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #D4AF37; text-align: center; margin-bottom: 25px;">♦ Contact Us ♦</div>
+        <div class="contact-container">
+            <div class="contact-info-block">
+                <div class="contact-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:+918248859680"><strong>8248859680</strong></a>
+                </div>
+                <div class="contact-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <a href="mailto:magizhchidecorstudio@gmail.com">magizhchidecorstudio@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-info-block">
+                <div class="contact-item address-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>
+                        No:3, East Pondy Main Road,<br>
+                        Valavanur, Villupuram,<br>
+                        Tamil Nadu - 605108
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Added Payment Options Section -->
-<section>
-  <h2>Payment Options</h2>
-  <div class="payment-box">
-    <p style="font-size: 18px; font-weight: bold; color: #333;">We Accept UPI Payments</p>
-    <div class="upi-id">8248859680tv5@ibl</div>
-    <p style="font-size: 14px; color: #555; margin-top: 10px;">Scan & Pay using any UPI App (PhonePe, Google Pay, Paytm)</p>
-  </div>
-</section>
-
-<section>
-<h2>Business Hours</h2>
-<p style="text-align:center;font-size:22px;color:#1e5e22;font-weight:bold;">
-🕒 Open 24 Hours (Monday - Sunday)
-</p>
-</section>
-
-<section class="contact">
-<h2>Contact Us</h2>
-
-<div class="contact-method">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-  <a href="tel:+918248859680">8248859680</a>
-</div>
-
-<div class="contact-method">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-  <a href="mailto:magizhchidecorstudio@gmail.com">magizhchidecorstudio@gmail.com</a>
-</div>
-
-<!-- Added Studio Address -->
-<div class="contact-method address-block">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-  <span>
-    <strong>Address:</strong><br>
-    No:3, East Pondy Main Road,<br>
-    Valavanur, Villupuram,<br>
-    Tamil Nadu - 605108
-  </span>
-</div>
-
-<br>
-
-<a href="https://wa.me/918248859680?text=Hi%20Magizhchi%20Decor%20Studio!%20I%20have%20an%20inquiry.">
-<button>
-  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
-  Chat on WhatsApp
-</button>
-</a>
-</section>
-
+<!-- Footer Section -->
 <footer>
-<p>© 2026 மகிழ்ச்சி Decor Studio</p>
-<p>We Plan • We Create • You Celebrate</p>
+    <div>© 2026 மகிழ்ச்சி Decor Studio. All Rights Reserved.</div>
+    <div style="font-weight: bold; color: #4A0E17;">We Plan • We Create • You Celebrate</div>
+    <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📸</a>
+        <a href="#">💼</a>
+    </div>
 </footer>
 
+<!-- Floating Larger Bottom Right WhatsApp Trigger -->
 <a class="whatsapp-float" href="https://wa.me/918248859680" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.288 1.48 4.793 1.48 5.275 0 9.56-4.283 9.564-9.553.002-2.553-1.001-4.95-2.825-6.776C16.356 2.478 13.96 1.484 11.41 1.484c-5.277 0-9.56 4.282-9.564 9.552-.001 1.62.441 3.206 1.282 4.594l-.436 1.594 1.64-.428zm12.55-7.108c-.287-.143-1.695-.836-1.957-.932-.262-.095-.453-.143-.642.143-.189.286-.733.933-.898 1.123-.165.189-.33.214-.618.071-.287-.143-1.214-.447-2.311-1.427-.853-.762-1.43-1.702-1.597-1.989-.167-.286-.018-.44.126-.583.13-.13.287-.334.432-.501.143-.167.19-.286.286-.476.096-.19.048-.357-.024-.5-.071-.143-.642-1.548-.879-2.12-.23-.556-.465-.48-.642-.489-.166-.008-.357-.01-.55-.01-.193 0-.507.071-.772.357-.266.287-1.011.987-1.011 2.407s1.021 2.793 1.164 2.984c.143.19 2.01 3.069 4.869 4.3c.68.293 1.213.468 1.628.6a3.91 3.91 0 0 0 1.784.112c.536-.08 1.695-.693 1.934-1.361.238-.668.238-1.24.167-1.36-.072-.12-.263-.215-.55-.358z"/></svg>
 </a>
 
 </body>
