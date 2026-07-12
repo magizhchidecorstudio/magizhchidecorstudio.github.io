@@ -373,38 +373,66 @@ nav a:hover::after{ width:100%; }
   position:relative;
   background:var(--ivory-50);
   border-radius:var(--radius-card);
-  padding:40px 30px 32px;
+  padding:0 0 32px;
+  overflow:hidden;
   transition:transform .45s var(--ease), box-shadow .45s var(--ease);
 }
 .service-card::before, .service-card::after{
   content:""; position:absolute; width:16px; height:16px;
-  border:1px solid var(--gold-500); opacity:.9;
+  border:1px solid var(--gold-300); opacity:.9; z-index:2;
 }
 .service-card::before{ top:10px; left:10px; border-right:none; border-bottom:none; }
-.service-card::after{ bottom:10px; right:10px; border-left:none; border-top:none; }
+.service-card::after{ top:10px; right:10px; border-left:none; border-bottom:none; }
 
 .service-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-maroon); }
 
+.service-card h3, .service-card > p, .service-card > h4, .service-card > .quote-link{
+  margin-left:30px; margin-right:30px;
+}
+
+/* Photo + floating icon badge */
+.service-photo{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  margin-bottom:24px;
+  background:var(--maroon-900);
+}
+.service-photo img{
+  width:100%; height:100%; object-fit:cover;
+  filter:saturate(.95);
+  transition:transform .6s var(--ease), filter .6s var(--ease);
+}
+.service-card:hover .service-photo img{ transform:scale(1.07); filter:saturate(1.05); }
+
+.service-photo::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(42,7,16,0) 55%, rgba(42,7,16,.55) 100%);
+}
+
 .service-icon-wrap{
-  width:56px; height:56px;
+  position:absolute; left:20px; bottom:16px; z-index:2;
+  width:52px; height:52px;
   display:flex; align-items:center; justify-content:center;
   border-radius:50%;
-  background:linear-gradient(180deg, var(--maroon-800), var(--maroon-900));
-  margin-bottom:22px;
+  background:linear-gradient(180deg, var(--gold-500), var(--gold-600));
+  box-shadow:0 10px 22px -8px rgba(0,0,0,.5);
 }
-.service-icon{ color:var(--gold-300); font-size:20px; }
+.service-icon{ color:var(--maroon-950); font-size:19px; }
 
 .service-card h3{
   font-family:'Cormorant Garamond', serif;
   font-size:1.5rem; font-weight:700;
-  margin:0 0 10px; color:var(--maroon-900);
+  margin-top:0; margin-bottom:10px; color:var(--maroon-900);
 }
-.service-card p{ margin:0 0 18px; color:var(--ink-600); line-height:1.7; font-size:.96rem; }
+.service-card p{ margin-bottom:18px; color:var(--ink-600); line-height:1.7; font-size:.96rem; }
 
 .service-card h4{
   font-family:'Jost', sans-serif;
   font-size:.82rem; font-weight:600; letter-spacing:.05em;
-  color:var(--gold-700); margin:0 0 18px; text-transform:uppercase;
+  color:var(--gold-700); margin-bottom:18px; text-transform:uppercase;
 }
 
 .quote-link{
