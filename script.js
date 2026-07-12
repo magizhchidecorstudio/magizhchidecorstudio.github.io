@@ -44,9 +44,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Animated Counter
-// (target number + suffix are captured ONCE per counter, before the
-// text is ever overwritten, so the animation always counts up to the
-// real value instead of re-reading its own in-progress display.)
+// Each counter declares its own target number + suffix via data attributes
+// (data-count-target, data-suffix), or is marked data-static="true" to skip
+// animation entirely (e.g. "24x7", which isn't a number to count up to).
 const counters = document.querySelectorAll(".counter h3");
 const speed = 140;
 
@@ -55,9 +55,12 @@ const runCounters = () => {
         if (counter.dataset.animated) return;
         counter.dataset.animated = "true";
 
-        const value = counter.innerText;
-        const number = parseInt(value.replace(/\D/g, ""), 10);
-        const suffix = value.replace(/[0-9]/g, "");
+        if (counter.dataset.static === "true") return;
+
+        const number = parseInt(counter.dataset.countTarget, 10);
+        const suffix = counter.dataset.suffix || "";
+        if (isNaN(number)) return;
+
         const increment = Math.max(1, Math.ceil(number / speed));
         let current = 0;
 
