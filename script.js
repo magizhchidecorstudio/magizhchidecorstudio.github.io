@@ -26,25 +26,25 @@ const speed = 200;
 
 counters.forEach(counter => {
 
+    // Capture the ORIGINAL target value and suffix once,
+    // before the animation starts overwriting the text.
+    const value = counter.innerText;
+
+    const number = parseInt(value.replace(/\D/g, ""), 10);
+
+    const suffix = value.replace(/[0-9]/g, "");
+
+    const increment = Math.max(1, Math.ceil(number / speed));
+
+    let current = 0;
+
     const animate = () => {
-
-        const value = counter.innerText;
-
-        const number = parseInt(value.replace(/\D/g, ""));
-
-        const suffix = value.replace(/[0-9]/g, "");
-
-        const current = +counter.getAttribute("data-count") || 0;
-
-        const increment = Math.ceil(number / speed);
 
         if (current < number) {
 
-            const next = Math.min(current + increment, number);
+            current = Math.min(current + increment, number);
 
-            counter.setAttribute("data-count", next);
-
-            counter.innerText = next + suffix;
+            counter.innerText = current + suffix;
 
             requestAnimationFrame(animate);
 
