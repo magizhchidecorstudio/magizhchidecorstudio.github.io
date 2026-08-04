@@ -1,208 +1,164 @@
-/* ==========================================
-   மகிழ்ச்சி Decor Studio — script.js (redesign)
-========================================== */
+/* =========================================================
+   மகிழ்ச்சி Decor Studio — Site Script
+   ========================================================= */
 
-// Header goes solid after scrolling past hero
-const header = document.getElementById("siteHeader");
-const setHeaderState = () => {
-    if (header) header.classList.toggle("solid", window.scrollY > 60);
-};
-setHeaderState();
-window.addEventListener("scroll", setHeaderState);
+document.addEventListener('DOMContentLoaded', function () {
 
-// Mobile nav toggle
-const navToggle = document.getElementById("navToggle");
-const siteNav = document.getElementById("siteNav");
-if (navToggle && siteNav) {
-    navToggle.addEventListener("click", () => {
-        const isOpen = siteNav.classList.toggle("open");
-        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        navToggle.innerHTML = isOpen
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
+  /* ---------- Mobile Nav Toggle ---------- */
+  const navToggle = document.getElementById('navToggle');
+  const siteNav   = document.getElementById('siteNav');
+
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', function () {
+      const isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
     });
-}
 
-// Smooth Scroll (also closes mobile nav)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        const href = this.getAttribute("href");
-        if (href === "#" || href.length < 2) return;
-
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: "smooth" });
-
-            if (siteNav && siteNav.classList.contains("open")) {
-                siteNav.classList.remove("open");
-                navToggle.setAttribute("aria-expanded", "false");
-                navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        }
+    // Close mobile menu after clicking a link
+    siteNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
     });
-});
+  }
 
-// Animated Counter
-// Each counter declares its own target number + suffix via data attributes
-// (data-count-target, data-suffix), or is marked data-static="true" to skip
-// animation entirely (e.g. "24x7", which isn't a number to count up to).
-const counters = document.querySelectorAll(".counter h3");
-const speed = 140;
-
-const runCounters = () => {
-    counters.forEach(counter => {
-        if (counter.dataset.animated) return;
-        counter.dataset.animated = "true";
-
-        if (counter.dataset.static === "true") return;
-
-        const number = parseInt(counter.dataset.countTarget, 10);
-        const suffix = counter.dataset.suffix || "";
-        if (isNaN(number)) return;
-
-        const increment = Math.max(1, Math.ceil(number / speed));
-        let current = 0;
-
-        const animate = () => {
-            if (current < number) {
-                current = Math.min(current + increment, number);
-                counter.innerText = current + suffix;
-                requestAnimationFrame(animate);
-            } else {
-                counter.innerText = number + suffix;
-            }
-        };
-        animate();
-    });
-};
-
-const counterFrame = document.querySelector(".stat-frame");
-if (counterFrame) {
-    const counterObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                runCounters();
-                counterObserver.disconnect();
-            }
-        });
-    }, { threshold: 0.35 });
-    counterObserver.observe(counterFrame);
-}
-
-// Fade / reveal on scroll
-const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".hidden").forEach(el => revealObserver.observe(el));
-
-// Hero kolam draw-in
-const heroKolam = document.getElementById("heroKolam");
-if (heroKolam) {
-    const shapes = heroKolam.querySelectorAll("path, circle");
-    shapes.forEach((shape, i) => {
-        const length = shape.getTotalLength ? shape.getTotalLength() : 300;
-        shape.style.strokeDasharray = length;
-        shape.style.strokeDashoffset = length;
-        shape.style.transition = `stroke-dashoffset 1.6s cubic-bezier(.22,.61,.36,1) ${i * 0.06}s`;
-    });
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            shapes.forEach(shape => { shape.style.strokeDashoffset = 0; });
-        }, 200);
-    });
-}
-
-// Scroll To Top
-const topButton = document.createElement("div");
-topButton.className = "scroll-top";
-topButton.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
-document.body.appendChild(topButton);
-
-window.addEventListener("scroll", () => {
-    topButton.classList.toggle("active", window.scrollY > 300);
-});
-
-topButton.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-// Ripple Effect
-document.querySelectorAll(".btn, .quote-btn").forEach(btn => {
-    btn.addEventListener("click", function (e) {
-        const circle = document.createElement("span");
-        circle.className = "ripple";
-        const rect = this.getBoundingClientRect();
-        circle.style.left = e.clientX - rect.left + "px";
-        circle.style.top = e.clientY - rect.top + "px";
-        this.appendChild(circle);
-        setTimeout(() => circle.remove(), 600);
-    });
-});
-
-// Copy UPI
-const upi = document.querySelector(".upi");
-if (upi) {
-    upi.style.cursor = "pointer";
-    upi.title = "Click to Copy";
-    upi.onclick = () => {
-        navigator.clipboard.writeText("8248859680tv5@ibl");
-        alert("UPI ID Copied!");
-    };
-}
-
-// Floating WhatsApp Pulse
-const whatsapp = document.querySelector(".floating-whatsapp");
-setInterval(() => {
-    if (whatsapp) {
-        whatsapp.style.transform = "scale(1.15)";
-        setTimeout(() => { whatsapp.style.transform = "scale(1)"; }, 400);
+  /* ---------- Header shadow on scroll ---------- */
+  const header = document.getElementById('siteHeader');
+  function updateHeaderShadow() {
+    if (!header) return;
+    if (window.scrollY > 20) {
+      header.style.boxShadow = '0 6px 24px rgba(0,0,0,0.25)';
+    } else {
+      header.style.boxShadow = 'none';
     }
-}, 4000);
+  }
+  window.addEventListener('scroll', updateHeaderShadow);
+  updateHeaderShadow();
 
-// Gallery Click (lightbox — handles both photos and YouTube videos)
-document.querySelectorAll(".gallery-item").forEach(item => {
-    item.addEventListener("click", () => {
-        const videoId = item.dataset.video;
-        const popup = document.createElement("div");
-        popup.className = "lightbox";
-
-        const closeBtn = `<span class="lightbox-close" aria-label="Close">&times;</span>`;
-
-        if (videoId) {
-            popup.innerHTML = `
-                ${closeBtn}
-                <div class="lightbox-content lightbox-video">
-                    <iframe
-                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
-                        title="Video"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>`;
-        } else {
-            const img = item.querySelector("img");
-            popup.innerHTML = `${closeBtn}<div class="lightbox-content"><img src="${img.src}" alt="${img.alt}"></div>`;
+  /* ---------- Scroll Reveal (.hidden -> .show) ---------- */
+  const revealEls = document.querySelectorAll('.hidden');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-        document.body.appendChild(popup);
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    // Fallback: just show everything
+    revealEls.forEach(function (el) { el.classList.add('show'); });
+  }
 
-        popup.querySelector(".lightbox-close").onclick = () => popup.remove();
-        popup.addEventListener("click", (e) => {
-            if (e.target === popup) popup.remove();
-        });
+  /* ---------- Animated Counters (About section) ---------- */
+  const counters = document.querySelectorAll('[data-count-target]');
+  function animateCounter(el) {
+    const target = parseFloat(el.getAttribute('data-count-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.round(target * eased);
+      el.textContent = current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ('IntersectionObserver' in window && counters.length) {
+    const counterObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function (el) { counterObserver.observe(el); });
+  } else {
+    counters.forEach(function (el) {
+      const target = parseFloat(el.getAttribute('data-count-target'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = target + suffix;
     });
-});
+  }
 
-// Loading Animation
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
+  /* ---------- Gallery Video Modal (YouTube) ---------- */
+  const galleryItems = document.querySelectorAll('.gallery-item[data-video]');
+  if (galleryItems.length) {
 
-console.log("மகிழ்ச்சி Decor Studio — redesign loaded");
+    // Build modal once
+    const modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.innerHTML =
+      '<div class="video-modal-backdrop"></div>' +
+      '<div class="video-modal-box">' +
+        '<button class="video-modal-close" aria-label="Close video"><i class="fa-solid fa-xmark"></i></button>' +
+        '<div class="video-modal-frame"><iframe allow="autoplay; encrypted-media" allowfullscreen></iframe></div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    const iframe   = modal.querySelector('iframe');
+    const closeBtn = modal.querySelector('.video-modal-close');
+    const backdrop = modal.querySelector('.video-modal-backdrop');
+
+    function openModal(videoId) {
+      if (!videoId || videoId.indexOf('YOUTUBE_VIDEO_ID') === 0) {
+        // Placeholder ID — nothing to play yet
+        return;
+      }
+      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    galleryItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        openModal(item.getAttribute('data-video'));
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
+  /* ---------- Smooth active-link scroll (nice-to-have) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId.length > 1) {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+});
